@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
-    - run: sudo rm -rf .next
+    - run: rm -rf .next
     - run: npm run build --if-present
     - run: pm2 delete deneme
     - run: pm2 start npm --name "deneme" -- start
